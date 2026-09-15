@@ -2,8 +2,7 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $screen = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
-$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-$gambarPath = Join-Path $scriptPath "gambar.jpg"
+$gambarPath = "$env:TEMP\fm\fake-malw-main\gambar.png"
 
 # Cek file ada
 if (-not (Test-Path $gambarPath)) {
