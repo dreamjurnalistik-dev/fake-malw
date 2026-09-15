@@ -10,8 +10,8 @@ if (-not (Test-Path $gambarPath)) {
     exit
 }
 
-# Loop 5 kali saja
-for ($i = 1; $i -le 5; $i++) {
+# Loop tak terbatas
+while ($true) {
     try {
         $img = [System.Drawing.Image]::FromFile($gambarPath)
         $form = New-Object System.Windows.Forms.Form
@@ -26,10 +26,8 @@ for ($i = 1; $i -le 5; $i++) {
         $form.BackgroundImage = $img
         $form.BackgroundImageLayout = 'Stretch'
         $form.Show()
-        Start-Sleep -Milliseconds 500
+        Start-Sleep -Milliseconds 200
     } catch {
         Write-Host "Error: $_"
     }
 }
-
-Start-Sleep -Seconds 10
